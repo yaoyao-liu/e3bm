@@ -1,1 +1,1 @@
-## An Ensemble of Epoch-wise Empirical Bayes forFew-shot Learning
+## An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning
