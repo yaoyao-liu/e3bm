@@ -29,6 +29,10 @@ def ensure_path(path):
     else:
         os.mkdir(path)
 
+def ensure_data():
+    if not os.path.exists('./data/miniImageNet'):
+        os.system('sh ./data/download.sh')
+
 def renew_path(path):
     if not os.path.exists(path):
         os.mkdir(path)

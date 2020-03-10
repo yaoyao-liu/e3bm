@@ -4,7 +4,7 @@ import os
 import numpy as np
 import torch
 import torch.nn.functional as F
-from utils.misc import pprint, ensure_path, create_dirs, get_logger, set_random_seed
+from utils.misc import pprint, ensure_path, create_dirs, get_logger, set_random_seed, ensure_data
 from utils.gpu_tools import occupy_memory, set_gpu
 from trainer.meta import MetaTrainer
 from trainer.meta_sib import MetaTrainerSIB
@@ -14,13 +14,13 @@ from tensorboardX import SummaryWriter
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     ### Basic Config
-    parser.add_argument('--baseline', type=str, default='MTL', choices=['MTL', 'SIB'])
+    parser.add_argument('--baseline', type=str, default='SIB', choices=['MTL', 'SIB'])
     parser.add_argument('--shot', type=int, default=1)
     parser.add_argument('--way', type=int, default=5)
     parser.add_argument('--train_query', type=int, default=15)
     parser.add_argument('--val_query', type=int, default=1)
     parser.add_argument('--label', type=str, default='Exp01')
-    parser.add_argument('--dataset', type=str, default='MiniImageNet', choices=['MiniImageNet', 'TieredImageNet', 'FC100'])
+    parser.add_argument('--dataset', type=str, default='MiniImageNet', choices=['MiniImageNet'])
     parser.add_argument('--gpu', default='0')
     parser.add_argument('--gpu_occupy', type=bool, default='True')
     parser.add_argument('--hyperprior_combination_softweight', type=float, default=1e-4)
@@ -99,11 +99,12 @@ if __name__ == '__main__':
             raise ValueError('Please set correct phase.')
 
     elif args.baseline == 'SIB':
+        ensure_data()
         torch.backends.cudnn.benchmark = True
         torch.backends.cudnn.enabled = True
         trainer = MetaTrainerSIB(args)
         trainer.train()
 
     else:
-        raise ValueError('Please set correct phase.')
+        raise ValueError('Please set correct baseline.')
 
