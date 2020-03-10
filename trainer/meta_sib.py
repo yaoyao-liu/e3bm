@@ -29,7 +29,7 @@ class MetaTrainerSIB(object):
 
         self.train_loader = BatchSampler(imgDir = train_dir, nClsEpisode=args.way, nSupport=args.shot, nQuery=args.train_query, transform=train_transform, useGPU=True, inputW=self.input_w, inputH=self.input_h, batchSize=args.batchsize_sib)
         self.test_loader = EpisodeSampler(imgDir=test_dir, nClsEpisode=args.way, nSupport=args.shot, nQuery=args.train_query, transform=val_transform, useGPU=True, inputW=self.input_w, inputH=self.input_h)
-        self.val_loader = EpisodeSampler(imgDir=test_dir, nClsEpisode=args.way, nSupport=args.shot, nQuery=args.train_query, transform=val_transform, useGPU=True, inputW=self.input_w, inputH=self.input_h)
+        self.val_loader = EpisodeSampler(imgDir=val_dir, nClsEpisode=args.way, nSupport=args.shot, nQuery=args.train_query, transform=val_transform, useGPU=True, inputW=self.input_w, inputH=self.input_h)
         self.args = args
 
     def train(self):

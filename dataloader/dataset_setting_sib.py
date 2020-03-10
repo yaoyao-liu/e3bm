@@ -21,11 +21,11 @@ def dataset_setting(dataset, nSupport):
 
         inputW, inputH, nbCls = 80, 80, 64
 
-        trainDir = './data/Mini-ImageNet/train/'
-        valDir = './data/Mini-ImageNet/val/'
-        testDir = './data/Mini-ImageNet/test/'
-        episodeJson = './data/Mini-ImageNet/val1000Episode_5_way_1_shot.json' if nSupport == 1 \
-                else './data/Mini-ImageNet/val1000Episode_5_way_5_shot.json'
+        trainDir = './data/miniImageNet/train/'
+        valDir = './data/miniImageNet/val/'
+        testDir = './data/miniImageNet/test/'
+        episodeJson = './data/miniImageNet/val1000Episode_5_way_1_shot.json' if nSupport == 1 \
+                else './data/miniImageNet/val1000Episode_5_way_5_shot.json'
 
     else:
         raise ValueError('Do not support other datasets yet.')

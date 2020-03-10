@@ -65,7 +65,7 @@ if __name__ == '__main__':
     parser.add_argument('--weight_decay_sib', type=float, default=0.0005)
     parser.add_argument('--num_iter_sib', type=int, default=50000)
     parser.add_argument('--val_episode_sib', type=int, default=100)
-    parser.add_argument('--resume_path_sib', type=str, default='./ckpts/Mini-ImageNet/netFeatBest64.653.pth')
+    parser.add_argument('--resume_path_sib', type=str, default='./ckpts/miniImageNet/netFeatBest.pth')
     parser.add_argument('--base_lr_sib', type=float, default=0.001)
     parser.add_argument('--sib_lr_mode', type=str, default='EBL', choices=['HPL', 'EBL'])
 

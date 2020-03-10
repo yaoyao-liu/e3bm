@@ -8,9 +8,9 @@ import numpy as np
 
 THIS_PATH = osp.dirname(__file__)
 ROOT_PATH = osp.abspath(osp.join(THIS_PATH, '..'))
-TRAIN_PATH = osp.join(ROOT_PATH, 'data/Mini-ImageNet/train')
-VAL_PATH = osp.join(ROOT_PATH, 'data/Mini-ImageNet/val')
-TEST_PATH = osp.join(ROOT_PATH, 'data/Mini-ImageNet/test')
+TRAIN_PATH = osp.join(ROOT_PATH, 'data/miniImageNet/train')
+VAL_PATH = osp.join(ROOT_PATH, 'data/miniImageNet/val')
+TEST_PATH = osp.join(ROOT_PATH, 'data/miniImageNet/test')
 
 class MiniImageNet2(Dataset):
     def __init__(self, setname, args):
