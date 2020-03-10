@@ -16,3 +16,7 @@ Install other requirements:
 pip install -r requirements.txt
 ```
 
+Run the experiment with default settings:
+```bash
+python main.py
+```
