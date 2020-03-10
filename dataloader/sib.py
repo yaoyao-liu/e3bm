@@ -4,7 +4,6 @@ import torch.utils.data as data
 import PIL.Image as Image
 import numpy as np
 import json
-
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
 
@@ -153,29 +152,4 @@ def TrainLoader(batchSize, imgDir, trainTransform) :
     dataloader = data.DataLoader(ImageFolder(imgDir, trainTransform),
                                  batch_size=batchSize, shuffle=True, drop_last=True)
     return dataloader
-
-
-if __name__ == '__main__' :
-    import torchvision.transforms as transforms
-    mean = [x/255.0 for x in [120.39586422,  115.59361427, 104.54012653]]
-    std = [x/255.0 for x in [70.68188272,  68.27635443,  72.54505529]]
-    normalize = transforms.Normalize(mean=mean, std=std)
-    trainTransform = transforms.Compose([
-                                         transforms.RandomCrop(80, padding=8),
-                                         transforms.RandomHorizontalFlip(),
-                                         lambda x: np.asarray(x),
-                                         transforms.ToTensor(),
-                                         normalize
-                                        ])
-
-    TrainEpisodeSampler = EpisodeSampler(imgDir = '../data/Mini-ImageNet/train_train/',
-                                        nClsEpisode = 5,
-                                        nSupport = 5,
-                                        nQuery = 14,
-                                        transform = trainTransform,
-                                        useGPU = True,
-                                        inputW = 80,
-                                        inputH = 80)
-    data = TrainEpisodeSampler.getEpisode()
-    print (data['SupportLabel'])
 

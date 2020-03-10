@@ -206,7 +206,7 @@ class ClassifierSIB(nn.Module):
 
             generated_combination_weights = self.hyperprior_combination_model(features_supp, grad, t)
             generated_basestep_weights = self.hyperprior_basestep_model(features_supp, grad, t)
-            #theta = theta - generated_basestep_weights * grad
+            theta = theta - generated_basestep_weights * grad
             total_scores += generated_combination_weights * self.apply_classification_weights(features_query, theta)
 
         return total_scores

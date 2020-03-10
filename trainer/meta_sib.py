@@ -25,17 +25,17 @@ class MetaTrainerSIB(object):
         logger.info(args)
         self.logger = logger
 
-        trainTransform, valTransform, self.inputW, self.inputH, trainDir, valDir, testDir, episodeJson, nbCls = dataset_setting(args.dataset, args.way)
+        train_transform, val_transform, self.input_w, self.input_h, train_dir, val_dir, test_dir, episode_json, nb_cls = dataset_setting(args.dataset, args.way)
 
-        self.trainLoader = BatchSampler(imgDir = trainDir, nClsEpisode=args.way, nSupport=args.shot, nQuery=args.train_query, transform=trainTransform, useGPU=True, inputW=self.inputW, inputH=self.inputH, batchSize=args.batchsize_sib)
-        self.testLoader = EpisodeSampler(imgDir=testDir, nClsEpisode=args.way, nSupport=args.shot, nQuery=args.train_query, transform=valTransform, useGPU=True, inputW=self.inputW, inputH=self.inputH)
-        self.valLoader = EpisodeSampler(imgDir=testDir, nClsEpisode=args.way, nSupport=args.shot, nQuery=args.train_query, transform=valTransform, useGPU=True, inputW=self.inputW, inputH=self.inputH)
+        self.train_loader = BatchSampler(imgDir = train_dir, nClsEpisode=args.way, nSupport=args.shot, nQuery=args.train_query, transform=train_transform, useGPU=True, inputW=self.input_w, inputH=self.input_h, batchSize=args.batchsize_sib)
+        self.test_loader = EpisodeSampler(imgDir=test_dir, nClsEpisode=args.way, nSupport=args.shot, nQuery=args.train_query, transform=val_transform, useGPU=True, inputW=self.input_w, inputH=self.input_h)
+        self.val_loader = EpisodeSampler(imgDir=test_dir, nClsEpisode=args.way, nSupport=args.shot, nQuery=args.train_query, transform=val_transform, useGPU=True, inputW=self.input_w, inputH=self.input_h)
         self.args = args
 
     def train(self):
         device = torch.device('cuda')
         args = self.args
-        netFeat, args.nFeat = get_featnet(args.backbone_sib, self.inputW, self.inputH)
+        netFeat, args.nFeat = get_featnet(args.backbone_sib, self.input_w, self.input_h)
 
         netFeat = netFeat.to(device)
         netSIB = ClassifierSIB(args.way, args.nFeat, args.steps_sib, args)
@@ -49,23 +49,6 @@ class MetaTrainerSIB(object):
 
         runner_sib = RunnerSIB(args, self.logger, netFeat, netSIB, optimizer, criterion)
 
-        bestAcc, lastAcc, history = runner_sib.train(self.trainLoader, self.valLoader)
-
-        msg = 'mv {} {}'.format(os.path.join(args.out_dir, 'netSIBBest.pth'),
-                                os.path.join(args.out_dir, 'netSIBBest{:.3f}.pth'.format(bestAcc)))
-        logger.info(msg)
-        os.system(msg)
-
-        msg = 'mv {} {}'.format(os.path.join(args.out_dir, 'netSIBLast.pth'),
-                                os.path.join(args.out_dir, 'netSIBLast{:.3f}.pth'.format(lastAcc)))
-        logger.info(msg)
-        os.system(msg)
-
-        with open(os.path.join(args.out_dir, 'history.json'), 'w') as f :
-            json.dump(history, f)
-
-        msg = 'mv {} {}'.format(args.out_dir, '{}_{:.3f}'.format(args.out_dir, bestAcc))
-        logger.info(msg)
-        os.system(msg)
+        bestAcc, lastAcc, history = runner_sib.train(self.train_loader, self.val_loader)
 
 
