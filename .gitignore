@@ -1,6 +1,6 @@
 bashrc
 data/miniImageNet
-ckpts
+ckpts/miniImageNet
 cache
 logs
 *.pyc

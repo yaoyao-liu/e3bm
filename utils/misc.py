@@ -31,7 +31,11 @@ def ensure_path(path):
 
 def ensure_data():
     if not os.path.exists('./data/miniImageNet'):
-        os.system('sh ./data/download.sh')
+        os.system('sh ./data/download_data.sh')
+
+def ensure_ckpt():
+    if not os.path.exists('./ckpts/miniImageNet'):
+        os.system('sh ./ckpts/download_ckpt.sh')
 
 def renew_path(path):
     if not os.path.exists(path):

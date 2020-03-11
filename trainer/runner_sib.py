@@ -46,7 +46,6 @@ class RunnerSIB:
 
 
     def compute_grad_loss(self, clsScore, QueryLabel):
-        # register hooks
         def require_nonleaf_grad(v):
             def hook(g):
                 v.grad_nonleaf = g
@@ -55,18 +54,29 @@ class RunnerSIB:
         handle = require_nonleaf_grad(clsScore)
 
         loss = self.criterion(clsScore, QueryLabel)
-        loss.backward(retain_graph=True) # need to backward again
-
-        # remove hook
+        loss.backward(retain_graph=True) 
         handle.remove()
 
-        gradLogit = self.netSIB.dni(clsScore) # B * n x nKnovel
+        gradLogit = self.netSIB.dni(clsScore)
         gradLoss = F.mse_loss(gradLogit, clsScore.grad_nonleaf.detach())
 
         return loss, gradLoss
 
+    def load_ckpt(self, ckptPth):
+        param = torch.load(ckptPth)
+        self.netFeat.load_state_dict(param['netFeat'])
+        self.netSIB.load_state_dict(param['SIB'])
+        lr = param['lr']
+        self.optimizer = torch.optim.SGD(itertools.chain(*[self.netSIB.parameters(),]),
+                                         lr,
+                                         momentum=self.momentum,
+                                         weight_decay=self.weightDecay,
+                                         nesterov=True)
+        msg = '\nLoading networks from {}'.format(ckptPth)
+        self.logger.info(msg)
 
-    def validate(self, valLoader, lr=None, mode='val'):
+
+    def validate(self, valLoader, lr=None):
 
         nEpisode = self.nEpisode
         self.logger.info('\n\nTest mode: randomly sample {:d} episodes...'.format(nEpisode))

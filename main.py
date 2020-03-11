@@ -4,7 +4,7 @@ import os
 import numpy as np
 import torch
 import torch.nn.functional as F
-from utils.misc import pprint, ensure_path, create_dirs, get_logger, set_random_seed, ensure_data
+from utils.misc import pprint, ensure_path, create_dirs, get_logger, set_random_seed, ensure_data, ensure_ckpt
 from utils.gpu_tools import occupy_memory, set_gpu
 from trainer.meta import MetaTrainer
 from trainer.meta_sib import MetaTrainerSIB
@@ -64,10 +64,12 @@ if __name__ == '__main__':
     parser.add_argument('--momentum_sib', type=float, default=0.9)
     parser.add_argument('--weight_decay_sib', type=float, default=0.0005)
     parser.add_argument('--num_iter_sib', type=int, default=50000)
-    parser.add_argument('--val_episode_sib', type=int, default=100)
+    parser.add_argument('--val_episode_sib', type=int, default=3000)
     parser.add_argument('--resume_path_sib', type=str, default='./ckpts/miniImageNet/netFeatBest.pth')
     parser.add_argument('--base_lr_sib', type=float, default=0.001)
     parser.add_argument('--sib_lr_mode', type=str, default='EBL', choices=['HPL', 'EBL'])
+    parser.add_argument('--phase_sib', type=str, default='meta_train', choices=['meta_train', 'meta_eval'])
+    parser.add_argument('--meta_eval_load_path', type=str, default='./ckpts/miniImageNet/e3bm_ckpt.pth')
 
     args = parser.parse_args()
     pprint(vars(args))
@@ -100,11 +102,16 @@ if __name__ == '__main__':
 
     elif args.baseline == 'SIB':
         ensure_data()
+        ensure_ckpt()
         torch.backends.cudnn.benchmark = True
         torch.backends.cudnn.enabled = True
         trainer = MetaTrainerSIB(args)
-        trainer.train()
-
+        if args.phase_sib=='meta_train':
+            trainer.train()
+        elif args.phase_sib=='meta_eval':
+            trainer.eval()
+        else:
+            raise ValueError('Please set correct phase.')
     else:
         raise ValueError('Please set correct baseline.')
 
