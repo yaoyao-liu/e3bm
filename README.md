@@ -21,12 +21,12 @@ Install other requirements:
 pip install -r requirements.txt
 ```
 
-Run meta-training with default settings:
+Run meta-training with default settings (data and pre-trained model will be downloaded automatically):
 ```bash
 python main.py --phase_sib=meta_train
 ```
 
-Run meta-test with downloaded checkpoint:
+Run meta-test with our checkpoint:
 ```bash
 python main.py --phase_sib=meta_eval
 ```
