@@ -69,9 +69,8 @@ if __name__ == '__main__':
     parser.add_argument('--base_lr_sib', type=float, default=0.001)
     parser.add_argument('--sib_lr_mode', type=str, default='EBL', choices=['HPL', 'EBL'])
     parser.add_argument('--phase_sib', type=str, default='meta_train', choices=['meta_train', 'meta_eval'])
-    #parser.add_argument('--meta_eval_load_path', type=str, default='./ckpts/miniImageNet/e3bm_ckpt.pth')
-    parser.add_argument('--meta_eval_load_path', type=str, default='/home/yaliu/yaoyaoliu_project/lcc-new/E3BM-backup/cache/Exp01_1shot_K3_seed100/outputs/netSIBBest.pth')
-
+    parser.add_argument('--meta_eval_load_path', type=str, default='./ckpts/miniImageNet/e3bm_ckpt.pth')
+    
     args = parser.parse_args()
     pprint(vars(args))
     print('Experiment label: ' + args.label)
