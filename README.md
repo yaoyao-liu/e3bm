@@ -21,7 +21,12 @@ Install other requirements:
 pip install -r requirements.txt
 ```
 
-Run the experiment with default settings:
+Run the meta-training with default settings:
 ```bash
-python main.py
+python main.py --phase_sib=meta_train
+```
+
+Run the meta-test with downloaded checkpoint:
+```bash
+python main.py --phase_sib=meta_eval
 ```
