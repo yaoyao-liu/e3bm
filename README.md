@@ -68,7 +68,7 @@ Please cite our paper if it is helpful to your work:
                Qianru Sun},
   title     = {{LCC:} Learning to Customize and Combine Neural Networks for Few-Shot
                Learning},
-  journal   = {aeXiv},
+  journal   = {arXiv},
   volume    = {1904.08479},
   year      = {2019},
   url       = {http://arxiv.org/abs/1904.08479}
