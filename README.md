@@ -4,7 +4,7 @@
 [![Python](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/)
 ![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8)
 
-### Paper: <https://arxiv.org/pdf/1904.08479> (last revised 16 Mar 2020)
+#### Paper: <https://arxiv.org/pdf/1904.08479> (last revised 16 Mar 2020)
 
 In order to run this repository, we advise you to install python 3.6 and PyTorch 1.2.0 with Anaconda.
 
