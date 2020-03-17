@@ -1,6 +1,6 @@
 ## An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning
 
-[![LICENSE](https://img.shields.io/badge/license-MIT-green)](https://github.com/yaoyao-liu/E3BM/blob/master/LICENSE)
+[![LICENSE](https://img.shields.io/github/license/yaoyao-liu/E3BM)](https://github.com/yaoyao-liu/E3BM/blob/master/LICENSE)
 [![Python](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/)
 ![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8)
 
