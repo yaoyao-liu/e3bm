@@ -27,7 +27,6 @@ import collections
 from collections import OrderedDict
 import random as pyrandom
 
-
 def create_dirs(dirs):
     try:
         for dir_ in dirs:
@@ -135,13 +134,11 @@ def to_device(input, device):
     else:
         raise TypeError("Input must contain tensor, dict or list, found {type(input)}")
 
-
 def fast_hist(label_pred, label_true, n_class):
     mask = (label_true >= 0) & (label_true < n_class)
     return np.bincount(
         n_class * label_true[mask].astype(int) + label_pred[mask],
         minlength=n_class ** 2).reshape(n_class, n_class)
-
 
 def convert_state_dict(state_dict):
     new_state_dict = OrderedDict()
@@ -149,7 +146,6 @@ def convert_state_dict(state_dict):
         name = k[7:] 
         new_state_dict[name] = v
     return new_state_dict
-
 
 def get_logger(logdir, name):
     logger = logging.getLogger(name)
@@ -164,7 +160,6 @@ def get_logger(logdir, name):
 
     strm_hdlr = logging.StreamHandler(sys.stdout)
     strm_hdlr.setFormatter(formatter)
-
     logger.addHandler(file_hdlr)
     logger.addHandler(strm_hdlr)
     return logger
