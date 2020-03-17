@@ -69,7 +69,7 @@ Please cite our paper if it is helpful to your work:
   title     = {An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning},
   journal   = {arXiv},
   volume    = {1904.08479},
-  year      = {2019},
+  year      = {2020},
   url       = {http://arxiv.org/abs/1904.08479}
 }
 ```
