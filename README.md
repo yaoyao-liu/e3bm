@@ -7,7 +7,7 @@
 ### Paper: <https://arxiv.org/pdf/1904.08479> (last revised 16 Mar 2020)
 
 
-## Installation
+### Installation
 
 In order to run this repository, we advise you to install python 3.6 and PyTorch 1.2.0 with Anaconda.
 You may download Anaconda and read the installation instruction on their official website:
@@ -26,7 +26,7 @@ Install other requirements:
 pip install -r requirements.txt
 ```
 
-## Running Experiments
+### Running Experiments
 
 Run meta-training with default settings (data and pre-trained model will be downloaded automatically):
 ```bash
@@ -43,7 +43,7 @@ Run meta-test with other checkpoints:
 python main.py --phase_sib=meta_eval --meta_eval_load_path=<your_ckpt_dir>
 ```
 
-## Citation
+### Citation
 
 Please cite our paper if it is helpful to your work:
 
@@ -61,7 +61,7 @@ Please cite our paper if it is helpful to your work:
 }
 ```
 
-## Acknowledgements
+### Acknowledgements
 
 Our implementations use the source code from the following repositories and users:
 
