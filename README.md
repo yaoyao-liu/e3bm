@@ -6,7 +6,7 @@
 
 ### Paper: <https://arxiv.org/pdf/1904.08479> (last revised 16 Mar 2020)
 
-This repository contains the PyTorch implementation for the Paper "[An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning](https://arxiv.org/pdf/1904.08479)". If you have any questions on this repository or the related paper, feel free to create an issue or send me an email. 
+This repository contains the PyTorch implementation for the Paper "[An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning](https://arxiv.org/pdf/1904.08479)". If you have any questions on this repository or the related paper, feel free to [create an issue](https://github.com/yaoyao-liu/E3BM/issues/new) or send me an email. 
 <br>
 Email address: yaoyao.liu (at) mpi-inf.mpg.de
 
