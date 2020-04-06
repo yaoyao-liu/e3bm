@@ -4,7 +4,7 @@
 [![Python](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/)
 ![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8)
 
-### Paper: <https://arxiv.org/pdf/1904.08479> (last revised 16 Mar 2020)
+### Paper: <https://arxiv.org/pdf/1904.08479> (latest version 16 Mar 2020)
 
 This repository contains the PyTorch implementation for the Paper "[An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning](https://arxiv.org/pdf/1904.08479)". If you have any questions on this repository or the related paper, feel free to [create an issue](https://github.com/yaoyao-liu/E3BM/issues/new) or send me an email. 
 <br>
