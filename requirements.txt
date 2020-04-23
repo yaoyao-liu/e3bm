@@ -2,4 +2,5 @@ tensorboardX
 easydict
 tqdm
 bypy
-Pillow==6.1
+miniimagenettools
+Pillow==6.2.2
