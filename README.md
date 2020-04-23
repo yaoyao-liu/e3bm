@@ -3,7 +3,7 @@
 [![LICENSE](https://img.shields.io/github/license/yaoyao-liu/E3BM)](https://github.com/yaoyao-liu/E3BM/blob/master/LICENSE)
 [![Python](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/)
 ![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8)
-[![CodeFactor](https://www.codefactor.io/repository/github/yaoyao-liu/e3bm/badge)](https://www.codefactor.io/repository/github/yaoyao-liu/e3bm)
+![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/yaoyao-liu/e3bm)
 
 ### Paper: <https://arxiv.org/pdf/1904.08479> (latest version 16 Mar 2020)
 
