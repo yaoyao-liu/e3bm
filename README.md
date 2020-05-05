@@ -85,7 +85,7 @@ Please cite our paper if it is helpful to your work:
 
 ### Acknowledgements
 
-Our implementation uses the source code from the following repositories and users:
+Our implementation uses the source code from the following repositories:
 
 * [Learning Embedding Adaptation for Few-Shot Learning](https://github.com/Sha-Lab/FEAT)
 
