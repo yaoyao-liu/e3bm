@@ -71,7 +71,7 @@ python main.py --phase_sib=meta_eval --meta_eval_load_path=<your_ckpt_dir>
 Please cite our paper if it is helpful to your work:
 
 ```
-@article{Liu2020E3BM
+@article{Liu2020E3BM,
   author    = {Yaoyao Liu and
                Bernt Schiele and
                Qianru Sun},
