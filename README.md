@@ -51,7 +51,7 @@ pip install -r requirements.txt
 
 #### Performance (ResNet-12)
 
-Experimental results on few-shot learning datasets with ResNet-12 backbone (Same as [this repository](https://github.com/kjunelee/MetaOptNet)).
+Experiment results on 5-way few-shot learning datasets with ResNet-12 backbone (Same as [this repository](https://github.com/kjunelee/MetaOptNet)).
 
 
 | Method          | Backbone  |𝑚𝑖𝑛𝑖 1-shot   | 𝑚𝑖𝑛𝑖 5-shot  | 𝒕𝒊𝒆𝒓𝒆𝒅 1-shot | 𝒕𝒊𝒆𝒓𝒆𝒅 5-shot |
