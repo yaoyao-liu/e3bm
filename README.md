@@ -12,8 +12,8 @@ Email address: yaoyao.liu (at) mpi-inf.mpg.de
 
 * [Introduction](#introduction)
 * [Installation](#installation)
-* [Inductive Setting Experiments](#Inductive-Setting-Experiments)
-* [Transductive Setting Experiments](#transductive-Setting-Experiments)
+* [Inductive Experiments](#Inductive-Experiments)
+* [Transductive Experiments](#transductive-Experiments)
 * [Citation](#citation)
 * [Acknowledgements](#acknowledgements)
 
@@ -47,7 +47,7 @@ Install other requirements:
 pip install -r requirements.txt
 ```
 
-### Inductive Setting Experiments
+### Inductive Experiments
 
 #### Performance (ResNet-12)
 
@@ -86,7 +86,7 @@ Pre-trained models: [Google Drive](https://drive.google.com/file/d/1mFumI9l_K0Pb
 <br>
 Meta-trained checkpoints: [Google Drive](https://drive.google.com/drive/folders/17qTMpovfgEV6mRi8M4FkMYLIfBm3smgc?usp=sharing)
 
-### Transductive Setting Experiments
+### Transductive Experiments
 
 See the transductive setting experiments in this branch: <https://github.com/yaoyao-liu/E3BM/tree/transductive>.
 
