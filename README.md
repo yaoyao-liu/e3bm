@@ -81,7 +81,7 @@ All the datasets and pre-trained models will be downloaded automatically.
 
 You may also download the resources on Google Drive using the following links:
 <br>
-Dataset: [miniImageNet](https://drive.google.com/file/d/1vv3m14kusJcRpCsG-brG_Xk9MnetY9Bt/view?usp=sharing) tieredImageNet
+Dataset: [miniImageNet](https://drive.google.com/file/d/1vv3m14kusJcRpCsG-brG_Xk9MnetY9Bt/view?usp=sharing) [tieredImageNet](https://drive.google.com/file/d/1bAcWiCO8BeFa0Brh6qs4ybPN15Apq5B8/view?usp=sharing)
 <br>
 Pre-trained models: [Google Drive](https://drive.google.com/file/d/1mFumI9l_K0PbVE1CfiH7BNWymRWKhXRb/view?usp=sharing)
 <br>
