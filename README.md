@@ -57,7 +57,6 @@ Experiment results on 5-way few-shot learning datasets with ResNet-12 backbone (
 | Method          | Backbone  |𝑚𝑖𝑛𝑖 1-shot   | 𝑚𝑖𝑛𝑖 5-shot  | 𝒕𝒊𝒆𝒓𝒆𝒅 1-shot | 𝒕𝒊𝒆𝒓𝒆𝒅 5-shot |
 | --------------  |---------- | ----------  | ----------   |------------ | ------------ |
 | [`MetaOptNet`](https://github.com/kjunelee/MetaOptNet)    | ResNet-12 |`62.64 ± 0.61` | `78.63 ± 0.46` | `65.99 ± 0.72` | `81.56 ± 0.53` | 
-| [`FEAT`](https://github.com/Sha-Lab/FEAT)    | ResNet-12 |`66.78 ± 0.20` | `82.05 ± 0.14` | `70.80 ± 0.23` | `84.79 ± 0.16` | 
 | `E3BM (Ours)`   | ResNet-12 |`64.09 ± 0.37` | `80.29 ± 0.25` | `71.34 ± 0.41` | `85.82 ± 0.29` | 
 
 #### Running experiments
