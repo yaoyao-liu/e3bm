@@ -31,7 +31,7 @@ from trainer.meta_trainer import MetaTrainer
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('-dataset', type=str, default='miniimagenet', choices=['miniimagenet', 'cub','tieredimagenet','fc100','tieredimagenet_yao','cifar_fs'])
+parser.add_argument('-dataset', type=str, default='miniimagenet', choices=['miniimagenet', 'tieredimagenet'])
 parser.add_argument('-datadir', type=str, default=None)
 parser.add_argument('-set',type=str,default='val',choices=['test','val'])
 parser.add_argument('-mode',type=str,default='meta_train',choices=['pre_train', 'meta_train', 'meta_eval'])
@@ -53,7 +53,7 @@ parser.add_argument('-meta_update',type=str,default='mtl',choices=['ft','mtl'])
 parser.add_argument('--hyperprior_init_mode', type=str, default='LAS', choices=['LAS', 'EQU'])
 parser.add_argument('--hyperprior_combination_softweight', type=float, default=1e-4)
 parser.add_argument('--hyperprior_basestep_softweight', type=float, default=1e-4)
-parser.add_argument('-base_init',type=str,default='feature',choices=['random','feature','feature_direction'])
+parser.add_argument('-base_init',type=str,default='feature',choices=['feature'])
 parser.add_argument('-base_epoch', type=int, default=100)#100
 parser.add_argument('-base_lr', type=float, default=0.1)#0.1
 parser.add_argument('-base_lr_encoder', type=float, default=0.01)#0.1
