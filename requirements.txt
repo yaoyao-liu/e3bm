@@ -1,0 +1,6 @@
+tensorboardX
+easydict
+tqdm
+bypy
+miniimagenettools
+Pillow==6.2.2
