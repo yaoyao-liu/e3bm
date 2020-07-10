@@ -1,4 +1,4 @@
-# Transductive Setting Experiments
+# Transductive Experiments
 
 ### Running Experiments
 
