@@ -109,10 +109,10 @@ Please cite our paper if it is helpful to your work:
 
 ### Acknowledgements
 
-Our implementations use the source code from the following repositories and users:
+Our implementations use the source code from the following repositories:
 
 * [Learning Embedding Adaptation for Few-Shot Learning](https://github.com/Sha-Lab/FEAT)
 
 * [Empirical Bayes Transductive Meta-Learning with Synthetic Gradients](https://github.com/hushell/sib_meta_learn)
 
-* [@icoz69](https://github.com/icoz69)
+* [DeepEMD: Differentiable Earth Mover's Distance for Few-Shot Learning](https://github.com/icoz69/DeepEMD)
