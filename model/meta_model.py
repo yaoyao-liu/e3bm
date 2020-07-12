@@ -1,5 +1,4 @@
 #   Copyright (c) 2020 Yaoyao Liu. All Rights Reserved.
-#   Some files of this repository are modified from https://github.com/hushell/sib_meta_learn
 #
 #   Licensed under the Apache License, Version 2.0 (the "License").
 #   You may not use this file except in compliance with the License.
@@ -106,7 +105,6 @@ class HyperpriorBasestep(nn.Module):
     def get_hyperprior_mapping_vars(self):
         return self.hyperprior_mapping_vars
 
-
 class MetaModel(nn.Module):
     def __init__(self, args, dropout=0.2, mode='meta'):
         super().__init__()
@@ -118,7 +116,6 @@ class MetaModel(nn.Module):
         self.update_lr = self.args.base_lr
         self.update_step = self.args.base_epoch
 
-        # crate label for finetune
         label_shot = torch.arange(self.args.way).repeat(self.args.shot)
         if torch.cuda.is_available():
             self.label_shot = label_shot.type(torch.cuda.LongTensor)

@@ -1,5 +1,4 @@
 #   Copyright (c) 2020 Yaoyao Liu. All Rights Reserved.
-#   Some files of this repository are modified from https://github.com/hushell/sib_meta_learn
 #
 #   Licensed under the Apache License, Version 2.0 (the "License").
 #   You may not use this file except in compliance with the License.
@@ -69,7 +68,6 @@ def renew_path(path):
 
 def count_acc(logits, label):
     pred = F.softmax(logits, dim=1).argmax(dim=1)
-    #pred = torch.argmax(logits, dim=1)
     if torch.cuda.is_available():
         return (pred == label).type(torch.cuda.FloatTensor).mean().item()
     else:

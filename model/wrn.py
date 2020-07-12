@@ -1,5 +1,4 @@
 #   Copyright (c) 2020 Yaoyao Liu. All Rights Reserved.
-#   Some files of this repository are modified from https://github.com/hushell/sib_meta_learn
 #
 #   Licensed under the Apache License, Version 2.0 (the "License").
 #   You may not use this file except in compliance with the License.
@@ -91,6 +90,6 @@ class ResNet(nn.Module):
         out = self.layer3(out)
         out = F.relu(self.bn1(out))
 
-        out = F.adaptive_avg_pool2d(out, 1).squeeze(-1).squeeze(-1)  # global avg pool
+        out = F.adaptive_avg_pool2d(out, 1).squeeze(-1).squeeze(-1)
 
         return out

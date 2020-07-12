@@ -1,5 +1,4 @@
 #   Copyright (c) 2020 Yaoyao Liu. All Rights Reserved.
-#   Some files of this repository are modified from https://github.com/hushell/sib_meta_learn
 #
 #   Licensed under the Apache License, Version 2.0 (the "License").
 #   You may not use this file except in compliance with the License.
@@ -23,7 +22,6 @@ def conv3x3(in_planes, out_planes, stride=1):
     return Conv2dMtl(in_planes, out_planes, kernel_size=3, stride=stride,
                      padding=1, bias=False)
 
-
 class BasicBlock(nn.Module):
     expansion = 1
 
@@ -43,7 +41,6 @@ class BasicBlock(nn.Module):
         self.num_batches_tracked = 0
         self.drop_block = drop_block
         self.block_size = block_size
-
 
     def forward(self, x):
         self.num_batches_tracked += 1
@@ -71,7 +68,6 @@ class BasicBlock(nn.Module):
             out = F.dropout(out, p=self.drop_rate, training=self.training, inplace=True)
 
         return out
-
 
 class ResNet(nn.Module):
 
@@ -123,6 +119,6 @@ class ResNet(nn.Module):
 
         x = self.layer4(x)
 
-        x=F.adaptive_avg_pool2d(x,1).squeeze(-1).squeeze(-1) #global avg pool
+        x=F.adaptive_avg_pool2d(x,1).squeeze(-1).squeeze(-1)
 
         return x

@@ -1,5 +1,4 @@
 #   Copyright (c) 2020 Yaoyao Liu. All Rights Reserved.
-#   Some files of this repository are modified from https://github.com/hushell/sib_meta_learn
 #
 #   Licensed under the Apache License, Version 2.0 (the "License").
 #   You may not use this file except in compliance with the License.
@@ -54,9 +53,9 @@ parser.add_argument('--hyperprior_init_mode', type=str, default='LAS', choices=[
 parser.add_argument('--hyperprior_combination_softweight', type=float, default=1e-4)
 parser.add_argument('--hyperprior_basestep_softweight', type=float, default=1e-4)
 parser.add_argument('-base_init',type=str,default='feature',choices=['feature'])
-parser.add_argument('-base_epoch', type=int, default=100)#100
-parser.add_argument('-base_lr', type=float, default=0.1)#0.1
-parser.add_argument('-base_lr_encoder', type=float, default=0.01)#0.1
+parser.add_argument('-base_epoch', type=int, default=100)
+parser.add_argument('-base_lr', type=float, default=0.1)
+parser.add_argument('-base_lr_encoder', type=float, default=0.01)
 parser.add_argument('-lr_combination', type=float, default=1e-6)
 parser.add_argument('-lr_combination_hyperprior', type=float, default=1e-6)
 parser.add_argument('-lr_basestep', type=float, default=1e-6)
