@@ -64,10 +64,10 @@ Experiment results for 5-way few-shot classification on ResNet-12 (same as [this
 
 Run meta-training with default settings:
 ```bash
-python main.py -backbone resnet12 -shot 1 -mode meta_train -dataset miniimagenet
-python main.py -backbone resnet12 -shot 5 -mode meta_train -dataset miniimagenet
-python main.py -backbone resnet12 -shot 1 -mode meta_train -dataset tieredimagenet
-python main.py -backbone resnet12 -shot 5 -mode meta_train -dataset tieredimagenet
+python main.py -backbone resnet12 -shot 1 -way 5 -mode meta_train -dataset miniimagenet
+python main.py -backbone resnet12 -shot 5 -way 5 -mode meta_train -dataset miniimagenet
+python main.py -backbone resnet12 -shot 1 -way 5 -mode meta_train -dataset tieredimagenet
+python main.py -backbone resnet12 -shot 5 -way 5 -mode meta_train -dataset tieredimagenet
 ```
 
 Run pre-training with default settings:
