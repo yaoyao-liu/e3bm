@@ -27,7 +27,6 @@ from tensorboardX import SummaryWriter
 import tqdm
 import time
 import importlib
-import torch.nn.functional as F
 
 class MetaTrainer(object):
     def __init__(self, args):
