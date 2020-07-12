@@ -32,8 +32,9 @@ def occupy_memory(cuda_device):
         x = torch.cuda.FloatTensor(256, 1024, block_mem)
         del x
 
-def set_gpu(x):
-    os.environ['CUDA_VISIBLE_DEVICES'] = x
-    print('Using gpu:', x)
-    
+def set_gpu(args):
+    gpu_list = [int(x) for x in args.gpu.split(',')]
+    os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'
+    os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
+    return gpu_list.__len__()
 

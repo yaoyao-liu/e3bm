@@ -62,7 +62,7 @@ class ResNet(nn.Module):
     def __init__(self,depth=28, widen_factor=10, dropout_rate=0):
         super(ResNet, self).__init__()
         self.in_planes = 16
-        assert ((depth - 4) % 6 == 0), 
+        assert ((depth - 4) % 6 == 0), 'Wide-resnet depth should be 6n+4'
         n = int((depth - 4) / 6)
         k = widen_factor
 

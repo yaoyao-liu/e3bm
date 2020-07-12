@@ -81,7 +81,7 @@ class MetaTrainer(object):
             self.model.load_state_dict(model_dict)
 
         if self.args.num_gpu>1:
-            self.model = nn.DataParallel(model,list(range(num_gpu)))     
+            self.model = nn.DataParallel(self.model,list(range(args.num_gpu)))     
         self.model=self.model.cuda()
         print('Building model finished.')
 

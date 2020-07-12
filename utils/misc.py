@@ -28,12 +28,6 @@ def save_list_to_txt(name,input_list):
         f.write(item+'\n')
     f.close()
 
-def set_gpu(args):
-    gpu_list = [int(x) for x in args.gpu.split(',')]
-    os.environ['CUDA_DEVICE_ORDER'] = 'PCI_BUS_ID'
-    os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
-    return gpu_list.__len__()
-
 def SLEEP(args):
     print('Rest for %.3f hour:' % (args.sleep))
     time.sleep(args.sleep*60*60)

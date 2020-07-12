@@ -22,7 +22,7 @@ from torch.utils.data import DataLoader
 import torch.nn as nn
 from dataloader.samplers import CategoriesSampler
 from utils.misc import *
-from utils.gpu_tools import occupy_memory
+from utils.gpu_tools import occupy_memory, set_gpu
 from tensorboardX import SummaryWriter
 import tqdm
 import time
@@ -64,7 +64,7 @@ parser.add_argument('-lr_basestep_hyperprior', type=float, default=1e-6)
 parser.add_argument('-sleep',type=float,help='hour',default=0.0)
 parser.add_argument('-gpu', default='0')
 parser.add_argument('-gpu_occupy',action='store_true')
-parser.add_argument('-seed', type=int, default=1)
+parser.add_argument('-seed', type=int, default=0)
 
 args = parser.parse_args()
 pprint(vars(args))
