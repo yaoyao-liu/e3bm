@@ -148,9 +148,7 @@ class MetaTrainer(object):
         global_count = 0
         writer = SummaryWriter(osp.join(args.save_path,'tf'))
 
-
-        #label for train and validation, always in the same pattern
-        label = torch.arange(args.way, dtype=torch.int8).repeat(args.query)#012340123401234...
+        label = torch.arange(args.way, dtype=torch.int8).repeat(args.query)
         label = label.type(torch.LongTensor)
         if torch.cuda.is_available():
             label = label.cuda()
@@ -163,7 +161,6 @@ class MetaTrainer(object):
 
             tl = Averager()
             ta = Averager()
-
 
             tqdm_gen = tqdm.tqdm(self.train_loader)
             model.train()

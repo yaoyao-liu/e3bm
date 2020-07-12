@@ -140,6 +140,16 @@ class MetaModel(nn.Module):
                     from model.resnet12 import ResNet
             self.encoder = ResNet()
             self.z_dim = 640
+        elif self.args.backbone == 'wrn':
+            if self.mode == 'pre':
+                from Models.backbone.wrn import ResNet
+            else:
+                if self.args.meta_update=='mtl':
+                    from model.wrn_mtl import ResNet
+                else:
+                    from model.wrn import ResNet
+            self.encoder = ResNet()
+            self.z_dim = 640
         else:
             raise ValueError('Please set the correct backbone')
 

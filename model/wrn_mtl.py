@@ -20,9 +20,10 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 import sys
 import numpy as np
+from model.conv2d_mtl import Conv2dMtl
 
 def conv3x3(in_planes, out_planes, stride=1):
-    return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride, padding=1, bias=True)
+    return Conv2dMtl(in_planes, out_planes, kernel_size=3, stride=stride, padding=1, bias=True)
 
 def conv_init(m):
     classname = m.__class__.__name__
@@ -38,15 +39,15 @@ class wide_basic(nn.Module):
     def __init__(self, in_planes, planes, dropout_rate, stride=1):
         super(wide_basic, self).__init__()
         self.bn1 = nn.BatchNorm2d(in_planes)
-        self.conv1 = nn.Conv2d(in_planes, planes, kernel_size=3, padding=1, bias=True)
+        self.conv1 = Conv2dMtl(in_planes, planes, kernel_size=3, padding=1, bias=True)
         self.dropout = nn.Dropout(p=dropout_rate)
         self.bn2 = nn.BatchNorm2d(planes)
-        self.conv2 = nn.Conv2d(planes, planes, kernel_size=3, stride=stride, padding=1, bias=True)
+        self.conv2 = Conv2dMtl(planes, planes, kernel_size=3, stride=stride, padding=1, bias=True)
 
         self.shortcut = nn.Sequential()
         if stride != 1 or in_planes != planes:
             self.shortcut = nn.Sequential(
-                nn.Conv2d(in_planes, planes, kernel_size=1, stride=stride, bias=True),
+                Conv2dMtl(in_planes, planes, kernel_size=1, stride=stride, bias=True),
             )
 
     def forward(self, x):
