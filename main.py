@@ -101,5 +101,3 @@ elif args.mode == 'meta_eval':
 elif args.mode == 'pre_train':
     print('Start pre-train phase.')
     trainer.pre_train()
-
-
