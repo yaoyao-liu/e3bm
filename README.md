@@ -57,9 +57,11 @@ Experiment results for 5-way few-shot classification on ResNet-12 (same as [this
 
 | Method          | Backbone  |𝑚𝑖𝑛𝑖 1-shot   | 𝑚𝑖𝑛𝑖 5-shot  | 𝒕𝒊𝒆𝒓𝒆𝒅 1-shot | 𝒕𝒊𝒆𝒓𝒆𝒅 5-shot |
 | --------------  |---------- | ----------  | ----------   |------------ | ------------ |
-| [`ProtoNet`](https://github.com/orobix/Prototypical-Networks-for-Few-shot-Learning-PyTorch)    | ResNet-12 |`60.37 ± 0.83` | `78.02 ± 0.57` | `65.65 ± 0.92` | `83.40 ± 0.65` | 
-| [`MetaOptNet`](https://github.com/kjunelee/MetaOptNet)    | ResNet-12 |`62.64 ± 0.61` | `78.63 ± 0.46` | `65.99 ± 0.72` | `81.56 ± 0.53` | 
-| [`CAN`](https://github.com/blue-blue272/fewshot-CAN)    | ResNet-12 |`63.85 ± 0.48` | `79.44 ± 0.34` | `69.89 ± 0.51` | `84.23 ± 0.37` | 
+| [`ProtoNet`](https://github.com/orobix/Prototypical-Networks-for-Few-shot-Learning-PyTorch)    | ResNet-12 |`60.37 ± 0.83` | `78.02 ± 0.57` | `65.65 ± 0.92` | `83.40 ± 0.65` |
+| [`MatchNet`](https://github.com/gitabcworld/MatchingNetworks)    | ResNet-12 |`63.08 ± 0.80` | `75.99 ± 0.60` | `68.50 ± 0.92` | `80.60 ± 0.71` |
+| [`MetaOptNet`](https://github.com/kjunelee/MetaOptNet)    | ResNet-12 |`62.64 ± 0.61` | `78.63 ± 0.46` | `65.99 ± 0.72` | `81.56 ± 0.53` |
+| [`Meta-Baseline`](https://github.com/cyvius96/few-shot-meta-baseline)    | ResNet-12 |`63.17 ± 0.23` | `79.26 ± 0.17` | `68.62 ± 0.27` | `81.56 ± 0.53` | 
+| [`CAN`](https://github.com/blue-blue272/fewshot-CAN)    | ResNet-12 |`63.85 ± 0.48` | `79.44 ± 0.34` | `69.89 ± 0.51` | `83.29 ± 0.18` | 
 | `E3BM (Ours)`   | ResNet-12 |`64.09 ± 0.37` | `80.29 ± 0.25` | `71.34 ± 0.41` | `85.82 ± 0.29` | 
 
 #### Running experiments
