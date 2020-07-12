@@ -228,8 +228,6 @@ class MetaModel(nn.Module):
             generated_combination_weights = self.hyperprior_combination_model(embedding_shot, grad, k)
             generated_basestep_weights = self.hyperprior_basestep_model(embedding_shot, grad, k)
             fast_weights = list(map(lambda p: p[1] - generated_basestep_weights * p[0], zip(grad, fast_weights)))
-            #fast_weights = list(map(lambda p: p[1] - self.update_lr * p[0], zip(grad, fast_weights)))
-
             logits_q = self.base_learner(embedding_query, fast_weights)
             logits_q = logits_q * self.args.temperature
             total_logits += generated_combination_weights * logits_q
@@ -237,4 +235,3 @@ class MetaModel(nn.Module):
             basestep_value_list.append(generated_basestep_weights)  
 
         return total_logits
-        #return logits_q
