@@ -238,7 +238,7 @@ class MetaTrainer(object):
 
             torch.save(trlog, osp.join(args.save_path, 'trlog'))
             if args.save_all:
-                save_model('epoch-%d'%epoch)
+                self.save_model('epoch-%d'%epoch)
                 torch.save(self.optimizer.state_dict(), osp.join(args.save_path,'optimizer_latest.pth'))
             print('Best epoch {}, best val acc={:.4f}.'.format(trlog['max_acc_epoch'], trlog['max_acc']))
             print ('This epoch takes %d seconds.'%(time.time()-start_time),'\nStill need %.2f hour to finish.'%((time.time()-start_time)*(args.max_epoch-epoch)/3600))
