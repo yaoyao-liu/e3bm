@@ -204,20 +204,6 @@ class MetaModel(nn.Module):
         logits_q = self.base_learner(embedding_query, fast_weights)
         total_logits = 0.0 * logits_q
 
-        """
-        logits = self.base_learner(batch_shot, fast_weights) * self.args.temperature
-        loss = F.cross_entropy(logits, batch_label)
-        grad = torch.autograd.grad(loss, fast_weights)
-        generated_combination_weights = self.hyperprior_combination_model(embedding_shot, grad, 0)
-        generated_basestep_weights = self.hyperprior_basestep_model(embedding_shot, grad, 0)
-        fast_weights = list(map(lambda p: p[1] - generated_basestep_weights * p[0], zip(grad, fast_weights)))
-        logits_q = self.base_learner(embedding_query, fast_weights)
-        logits_q = logits_q * self.args.temperature
-        total_logits = generated_combination_weights * logits_q
-        combination_value_list.append(generated_combination_weights)
-        basestep_value_list.append(generated_basestep_weights)
-        """
-
         for k in range(0, self.update_step):
 
             batch_shot = embedding_shot
