@@ -98,14 +98,14 @@ class MetaTrainer(object):
 
         trainset = Dataset('train', args)
         if args.mode == 'pre_train':
-            self.train_loader = DataLoader(dataset=trainset,batch_size=args.bs,shuffle=True, num_workers=8, pin_memory=True)
+            self.train_loader = DataLoader(dataset=trainset,batch_size=args.bs,shuffle=True, num_workers=args.num_workers, pin_memory=True)
         else:
             train_sampler = CategoriesSampler(trainset.label, args.val_frequency*args.bs, args.way, args.shot + args.query)
-            self.train_loader = DataLoader(dataset=trainset, batch_sampler=train_sampler, num_workers=8, pin_memory=True)
+            self.train_loader = DataLoader(dataset=trainset, batch_sampler=train_sampler, num_workers=args.num_workers, pin_memory=True)
 
         valset = Dataset(args.set, args)
         val_sampler = CategoriesSampler(valset.label, args.val_episode, args.way, args.shot + args.query)
-        self.val_loader = DataLoader(dataset=valset, batch_sampler=val_sampler, num_workers=8, pin_memory=True)
+        self.val_loader = DataLoader(dataset=valset, batch_sampler=val_sampler, num_workers=args.num_workers, pin_memory=True)
 
         val_loader=[x for x in self.val_loader]
 
@@ -253,7 +253,7 @@ class MetaTrainer(object):
         trlog = torch.load(osp.join(args.save_path, 'trlog'))
         test_set = self.Dataset('test', args)
         sampler = CategoriesSampler(test_set.label, 3000, args.way, args.shot + args.query)
-        loader = DataLoader(test_set, batch_sampler=sampler, num_workers=8, pin_memory=True)
+        loader = DataLoader(test_set, batch_sampler=sampler, num_workers=args.num_workers, pin_memory=True)
         test_acc_record = np.zeros((3000,))
 
         model.load_state_dict(torch.load(osp.join(args.save_path, 'max_acc' + '.pth'))['params'])

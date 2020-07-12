@@ -1,6 +1,7 @@
 *.pyc
 *.npy
 *.tar
+run.sh
 bashrc
 miniimagenet
 logs

@@ -65,6 +65,7 @@ parser.add_argument('-sleep',type=float,help='hour',default=0.0)
 parser.add_argument('-gpu', default='0')
 parser.add_argument('-gpu_occupy',action='store_true')
 parser.add_argument('-seed', type=int, default=0)
+parser.add_argument('-num_workers', type=int, default=8)
 
 args = parser.parse_args()
 pprint(vars(args))
