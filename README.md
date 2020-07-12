@@ -2,7 +2,7 @@
 
 [![LICENSE](https://img.shields.io/github/license/yaoyao-liu/E3BM?style=flat-square)](https://github.com/yaoyao-liu/E3BM/blob/master/LICENSE)
 [![Python](https://img.shields.io/badge/python-3.6-blue.svg?style=flat-square)](https://www.python.org/)
-![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8?style=flat-square)
+[![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8?style=flat-square)](https://pytorch.org/)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/yaoyao-liu/E3BM/inductive?style=flat-square)](https://www.codefactor.io/repository/github/yaoyao-liu/e3bm)
 
 This repository contains the PyTorch implementation for the Paper "[An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning](https://arxiv.org/pdf/1904.08479)". If you have any questions on this repository or the related paper, feel free to [create an issue](https://github.com/yaoyao-liu/E3BM/issues/new) or send me an email. 
