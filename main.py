@@ -30,7 +30,7 @@ from trainer.meta_trainer import MetaTrainer
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('-dataset', type=str, default='miniimagenet', choices=['miniimagenet', 'tieredimagenet'])
+parser.add_argument('-dataset', type=str, default='miniimagenet', choices=['miniimagenet', 'tieredimagenet', 'fc100'])
 parser.add_argument('-datadir', type=str, default=None)
 parser.add_argument('-set',type=str,default='val',choices=['test','val'])
 parser.add_argument('-mode',type=str,default='meta_train',choices=['pre_train', 'meta_train', 'meta_eval'])

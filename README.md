@@ -5,7 +5,7 @@
 [![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8?style=flat-square)](https://pytorch.org/)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/yaoyao-liu/E3BM/inductive?style=flat-square)](https://www.codefactor.io/repository/github/yaoyao-liu/e3bm)
 
-This repository contains the PyTorch implementation for the Paper "[An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning](https://arxiv.org/pdf/1904.08479)". If you have any questions on this repository or the related paper, feel free to [create an issue](https://github.com/yaoyao-liu/E3BM/issues/new) or send me an email. 
+This repository contains the PyTorch implementation for the Paper "[An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning](https://arxiv.org/pdf/1904.08479)". If you have any questions on this repository or the related paper, feel free to [create an issue](https://gitlab.mpi-klsb.mpg.de/yaoyaoliu/e3bm/-/issues/new) or send me an email. 
 <br>
 Email address: yaoyao.liu (at) mpi-inf.mpg.de
 
@@ -93,7 +93,7 @@ Meta-trained checkpoints: [Google Drive](https://drive.google.com/drive/folders/
 
 ### Transductive Experiments
 
-See the transductive setting experiments in this branch: <https://github.com/yaoyao-liu/E3BM/tree/transductive>.
+See the transductive setting experiments in this branch: <https://gitlab.mpi-klsb.mpg.de/yaoyaoliu/e3bm/-/tree/transductive>.
 
 
 
@@ -103,9 +103,9 @@ Please cite our paper if it is helpful to your work:
 
 ```bibtex
 @inproceedings{Liu2020E3BM,
-  author    = {Yaoyao Liu and
-               Bernt Schiele and
-               Qianru Sun},
+  author    = {Liu, Yaoyao and
+               Schiele, Bernt and
+               Sun, Qianru},
   title     = {An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning},
   booktitle = {European Conference on Computer Vision (ECCV)},
   year      = {2020}
