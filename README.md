@@ -83,7 +83,9 @@ All the datasets and pre-trained models will be downloaded automatically.
 
 You may also download the resources on Google Drive/百度网盘 using the following links:
 <br>
-Dataset: [miniImageNet](https://drive.google.com/file/d/1vv3m14kusJcRpCsG-brG_Xk9MnetY9Bt/view?usp=sharing), and [tieredImageNet](https://drive.google.com/file/d/1T-4NVTSa5T6CXKSRbymYLnWp_OrtF-mo/view?usp=sharing)
+Dataset 1 - miniImageNet: \[[Google Drive](https://drive.google.com/file/d/1vv3m14kusJcRpCsG-brG_Xk9MnetY9Bt/view?usp=sharing)\] \[[百度网盘](https://pan.baidu.com/s/1148LuaebBDic0DJNPFL0_w)\] 提取码: p6w4
+<br>
+Dataset 2 - tieredImageNet: \[[tieredImageNet](https://drive.google.com/file/d/1T-4NVTSa5T6CXKSRbymYLnWp_OrtF-mo/view?usp=sharing)\]
 <br>
 Pre-trained models: \[[Google Drive](https://drive.google.com/file/d/13pzlvn9s4psbZlGpIsYCi9fwQnWeSIkP/view?usp=sharing)\] \[[百度网盘](https://pan.baidu.com/s/1bjbPKmhztHrofWlkFKCJPg)\] 提取码: 2e7p
 <br>
