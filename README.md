@@ -85,9 +85,9 @@ You may also download the resources on Google Drive using the following links:
 <br>
 Dataset: [miniImageNet](https://drive.google.com/file/d/1vv3m14kusJcRpCsG-brG_Xk9MnetY9Bt/view?usp=sharing), and [tieredImageNet](https://drive.google.com/file/d/1T-4NVTSa5T6CXKSRbymYLnWp_OrtF-mo/view?usp=sharing)
 <br>
-Pre-trained models: [Google Drive](https://drive.google.com/file/d/13pzlvn9s4psbZlGpIsYCi9fwQnWeSIkP/view?usp=sharing) [百度网盘](https://pan.baidu.com/s/1bjbPKmhztHrofWlkFKCJPg) 提取码: 2e7p
+Pre-trained models: \[[Google Drive](https://drive.google.com/file/d/13pzlvn9s4psbZlGpIsYCi9fwQnWeSIkP/view?usp=sharing)\] \[[百度网盘](https://pan.baidu.com/s/1bjbPKmhztHrofWlkFKCJPg)\] 提取码: 2e7p
 <br>
-Meta-trained checkpoints: [Google Drive](https://drive.google.com/drive/folders/17qTMpovfgEV6mRi8M4FkMYLIfBm3smgc?usp=sharing) [百度网盘](https://pan.baidu.com/s/1POKnhd-EmfiI7388eb7yVA) 提取码: wc7g
+Meta-trained checkpoints: \[[Google Drive](https://drive.google.com/drive/folders/17qTMpovfgEV6mRi8M4FkMYLIfBm3smgc?usp=sharing)\] \[[百度网盘](https://pan.baidu.com/s/1POKnhd-EmfiI7388eb7yVA)\] 提取码: wc7g
 <br>
 
 ### Transductive Experiments
