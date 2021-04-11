@@ -362,8 +362,7 @@ class MetaTrainer(object):
                         p = args.shot * args.way
                         data_shot, data_query = data[:p], data[p:]  
                         data_shot = data_shot.unsqueeze(0).repeat(num_gpu, 1, 1, 1, 1)
-                        logits = model(
-                            (data_shot, data_query)) 
+                        logits = model.pretrain_forward((data_shot, data_query)) 
                         loss = F.cross_entropy(logits, label)
                         acc = count_acc(logits, label)
                         vl.add(loss.item())
