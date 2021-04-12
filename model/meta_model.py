@@ -192,8 +192,8 @@ class MetaModel(nn.Module):
 
         embedding_query = self.encoder(data_query)
         embedding_shot = self.encoder(data_shot)
-        embedding_shot=self.normalize_feature(embedding_shot)
-        embedding_query=self.normalize_feature(embedding_query)
+        embedding_shot = self.normalize_feature(embedding_shot)
+        embedding_query = self.normalize_feature(embedding_query)
 
         with torch.no_grad():
             if self.args.shot==1:
@@ -226,5 +226,42 @@ class MetaModel(nn.Module):
             total_logits += generated_combination_weights * logits_q
             combination_value_list.append(generated_combination_weights)
             basestep_value_list.append(generated_basestep_weights)  
+
+        return total_logits
+
+    def preval_forward(self, data_shot, data_query):
+        data_query=data_query.squeeze(0)
+        data_shot = data_shot.squeeze(0)
+
+        embedding_query = self.encoder(data_query)
+        embedding_shot = self.encoder(data_shot)
+        embedding_shot = self.normalize_feature(embedding_shot)
+        embedding_query = self.normalize_feature(embedding_query)
+
+        with torch.no_grad():
+            if self.args.shot==1:
+                proto = embedding_shot
+            else:
+                proto=self.fusion(embedding_shot)
+            self.base_learner.fc1_w.data = proto
+
+        fast_weights = self.base_learner.vars
+
+        batch_shot = embedding_shot
+        batch_label = self.label_shot
+        logits_q = self.base_learner(embedding_query, fast_weights)
+        total_logits = 0.0 * logits_q
+
+        for k in range(0, self.update_step):
+
+            batch_shot = embedding_shot
+            batch_label = self.label_shot
+            logits = self.base_learner(batch_shot, fast_weights) * self.args.temperature
+            loss = F.cross_entropy(logits, batch_label)
+            grad = torch.autograd.grad(loss, fast_weights)
+            fast_weights = list(map(lambda p: p[1] - 0.1 * p[0], zip(grad, fast_weights)))
+            logits_q = self.base_learner(embedding_query, fast_weights)
+            logits_q = logits_q * self.args.temperature
+            total_logits += logits_q
 
         return total_logits

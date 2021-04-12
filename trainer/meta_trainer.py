@@ -306,6 +306,12 @@ class MetaTrainer(object):
         global_count = 0
         writer = SummaryWriter(osp.join(args.save_path,'tf'))
 
+        label = torch.arange(args.way).repeat(args.query)
+        if torch.cuda.is_available():
+            label = label.type(torch.cuda.LongTensor)
+        else:
+            label = label.type(torch.LongTensor)
+
         SLEEP(args)
         for epoch in range(1, args.max_epoch + 1):
             print (args.save_path)
@@ -348,7 +354,7 @@ class MetaTrainer(object):
             vl = Averager()
             va = Averager()
 
-            if epoch <args.val_epoch:
+            if epoch < args.val_epoch:
                 vl=0
                 va=0
             else:
@@ -360,8 +366,8 @@ class MetaTrainer(object):
                         data = batch[0]
                     p = args.shot * args.way
                     data_shot, data_query = data[:p], data[p:]  
-                    data_shot = data_shot.unsqueeze(0).repeat(num_gpu, 1, 1, 1, 1)
-                    logits = model.meta_forward(data_shot, data_query)
+                    data_shot = data_shot.unsqueeze(0).repeat(args.num_gpu, 1, 1, 1, 1)
+                    logits = model.preval_forward(data_shot, data_query)
                     loss = F.cross_entropy(logits, label)
                     acc = count_acc(logits, label)
                     vl.add(loss.item())
