@@ -5,6 +5,8 @@
 [![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8?style=flat-square)](https://pytorch.org/)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/yaoyao-liu/E3BM/inductive?style=flat-square)](https://www.codefactor.io/repository/github/yaoyao-liu/e3bm)
 
+[[Paper](https://link.springer.com/content/pdf/10.1007%2F978-3-030-58517-4_24.pdf)] [[Project Page](https://e3bm.yyliu.net/)] [[GitLab@MPI](https://gitlab.mpi-klsb.mpg.de/yaoyaoliu/e3bm/)] 
+
 This repository contains the PyTorch implementation for the [ECCV 2020](https://eccv2020.eu/) Paper "[An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning](https://link.springer.com/content/pdf/10.1007%2F978-3-030-58517-4_24.pdf)". If you have any questions on this repository or the related paper, feel free to [create an issue](https://github.com/yaoyao-liu/E3BM/issues/new) or [send me an email](mailto:yaoyao.liu+github@mpi-inf.mpg.de).
 
 #### Summary
