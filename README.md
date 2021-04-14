@@ -1,9 +1,9 @@
 ## An Ensemble of Epoch-wise Empirical Bayes for Few-shot Learning
 
 [![LICENSE](https://img.shields.io/github/license/yaoyao-liu/E3BM?style=flat-square)](https://github.com/yaoyao-liu/E3BM/blob/master/LICENSE)
-[![Python](https://img.shields.io/badge/python-3.6-blue.svg?style=flat-square)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8?style=flat-square)](https://pytorch.org/)
-[![CodeFactor](https://img.shields.io/codefactor/grade/github/yaoyao-liu/E3BM/inductive?style=flat-square)](https://www.codefactor.io/repository/github/yaoyao-liu/e3bm)
+[![Python](https://img.shields.io/badge/python-3.6-blue.svg?style=flat-square&logo=python&color=3776AB)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/pytorch-1.2.0-%237732a8?style=flat-square&logo=PyTorch&color=EE4C2C)](https://pytorch.org/)
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/yaoyao-liu/E3BM/inductive?style=flat-square&logo=codefactor&color=F44A6A)](https://www.codefactor.io/repository/github/yaoyao-liu/e3bm)
 
 [[Paper](https://link.springer.com/content/pdf/10.1007%2F978-3-030-58517-4_24.pdf)] [[Project Page](https://e3bm.yyliu.net/)] [[GitLab@MPI](https://gitlab.mpi-klsb.mpg.de/yaoyaoliu/e3bm/)] 
 
