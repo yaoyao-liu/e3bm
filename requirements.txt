@@ -3,4 +3,4 @@ easydict
 tqdm
 bypy
 miniimagenettools
-Pillow==6.2.2
+Pillow==10.0.1
